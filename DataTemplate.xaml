@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:local="clr-namespace:Podo_TODOList"
+					xmlns:view="clr-namespace:Podo_TODOList.View"
+					xmlns:mainView="clr-namespace:Podo_TODOList.View.Main"
+					xmlns:mainViewModel="clr-namespace:Podo_TODOList.ViewModel.Main">
+	<DataTemplate DataType="{x:Type mainViewModel:MainViewModel}">
+		<local:MainWindow/>
+	</DataTemplate>
+	<DataTemplate DataType="{x:Type mainViewModel:TopbarViewModel}">
+		<mainView:TopbarView/>
+	</DataTemplate>
+	<DataTemplate DataType="{x:Type mainViewModel:SidebarViewModel}">
+		<mainView:SidebarView/>
+	</DataTemplate>
+	<DataTemplate DataType="{x:Type mainViewModel:UnderbarViewModel}">
+		<mainView:UnderbarView/>
+	</DataTemplate>
+				  
+</ResourceDictionary>

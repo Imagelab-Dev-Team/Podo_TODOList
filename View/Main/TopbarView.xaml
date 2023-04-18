@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Podo_TODOList.View.Main.TopbarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+		     xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:Podo_TODOList.View.Main"
+             mc:Ignorable="d" 
+             d:DesignHeight="50">
+    <Grid>
+		<md:ColorZone Mode="PrimaryMid" VerticalAlignment="Stretch">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="5"/>
+					<ColumnDefinition Width="50"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="100"/>
+					<ColumnDefinition Width="100"/>
+					<ColumnDefinition Width="10"/>
+				</Grid.ColumnDefinitions>
+				<ToggleButton Grid.Column="1" 
+							  x:Name="SidebarToggleButton" 
+							  Style="{DynamicResource MaterialDesignHamburgerToggleButton}"
+							  IsChecked="{Binding IsChecked}"/>
+				<Button Grid.Column="4" Style="{DynamicResource MaterialDesignFlatLightBgButton}"
+						Content="LOGIN"/>
+			</Grid>
+		</md:ColorZone>
+		<!--<Border CornerRadius="5"
+				VerticalAlignment="Stretch"
+				Background="Transparent"
+				BorderBrush="blue"
+				BorderThickness="1">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="100"/>
+					<ColumnDefinition Width="100"/>
+					<ColumnDefinition Width="10"/>
+				</Grid.ColumnDefinitions>
+
+				<Button Grid.Column="2" Style="{DynamicResource MaterialDesignFlatLightBgButton}"
+						Content="LOGIN"/>
+			</Grid>
+		</Border>-->
+    </Grid>
+</UserControl>

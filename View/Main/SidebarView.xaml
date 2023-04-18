@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Podo_TODOList.View.Main.SidebarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Podo_TODOList.View.Main"
+			 xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+      d:DesignHeight="620" d:DesignWidth="250">
+	<DockPanel MinWidth="220">
+		<ToggleButton HorizontalAlignment="Right"
+							DockPanel.Dock="Top"
+							IsChecked="{Binding IsChecked}"
+							Style="{DynamicResource MaterialDesignHamburgerToggleButton}"/>
+		<TextBlock Text="SideBar"
+						DockPanel.Dock="Top"
+						Style="{DynamicResource MaterialDesignOutlinedTextBlock}"/>
+	</DockPanel>
+</UserControl>
