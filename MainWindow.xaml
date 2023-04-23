@@ -6,52 +6,39 @@
 		xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Podo_TODOList"
 		xmlns:mainViews="clr-namespace:Podo_TODOList.View.Main"
+		xmlns:commonViews="clr-namespace:Podo_TODOList.View.Common"
+		xmlns:converters="clr-namespace:Podo_TODOList.Core.Converters"
         mc:Ignorable="d"
-        Title="T O D O" Height="700" Width="1000"
+        Title="// TODO : " Height="700" Width="1000"
 		TextElement.Foreground="{DynamicResource MaterialDesignBody}"
 		Background="{DynamicResource MaterialDesignPaper}"
 		FontFamily="{StaticResource MaterialDesignFont}">
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="5"/>
-			<ColumnDefinition Width="50"/>
-			<ColumnDefinition Width="5"/>
-			<ColumnDefinition Width="*"/>
-			<ColumnDefinition Width="5"/>
-		</Grid.ColumnDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="5"/>
-			<RowDefinition Height="50"/>
-			<RowDefinition Height="5"/>
-			<RowDefinition/>
-			<RowDefinition Height="5"/>
-			<RowDefinition Height="50"/>
-			<RowDefinition Height="5"/>
-		</Grid.RowDefinitions>
-		<Grid Grid.Column="0" Grid.Row="0"
-			  Grid.ColumnSpan="5"
-			  Grid.RowSpan="2">
-			<ContentControl Content="{Binding CurrentTopbarView}"
-							x:Name="Topbar"/>
-		</Grid>
-		<Grid Grid.Column="0" Grid.Row="0"
-			  Grid.ColumnSpan="5"
-			  Grid.RowSpan="6">
-			<md:DialogHost>
-				<md:DrawerHost IsLeftDrawerOpen="{Binding IsChecked}">
-					<md:DrawerHost.LeftDrawerContent>
-						<mainViews:SidebarView/>
-					</md:DrawerHost.LeftDrawerContent>
-				</md:DrawerHost>
-			</md:DialogHost>
-		</Grid>
-		<Grid Grid.Column="3" Grid.Row="3">
-			<ContentControl Content="{Binding CurrentTaskListView}"
-							x:Name="TaskList"/>
-		</Grid>
-		<Grid Grid.Column="3" Grid.Row="5">
-			<ContentControl Content="{Binding CurrentUnderbarView}"
-							x:Name="Underbar"/>
-		</Grid>
-    </Grid>
+	<Window.Resources>
+		<converters:BooleanToVisibilityConverter x:Key="BoolToVisibleConverter"/>
+	</Window.Resources>
+	<md:DialogHost DialogTheme="Inherit"
+					   Identifier="RootDialog">
+		<md:DrawerHost IsLeftDrawerOpen="{Binding IsChecked}">
+			<md:DrawerHost.LeftDrawerContent>
+				<mainViews:SidebarView/>
+			</md:DrawerHost.LeftDrawerContent>
+
+			<DockPanel >
+				<md:ColorZone DockPanel.Dock="Top">
+					<DockPanel>
+
+						<mainViews:TopbarView DockPanel.Dock="Top"
+									  Height="50"/>
+					</DockPanel>
+				</md:ColorZone>
+				<Grid Height="Auto"
+					  Width="Auto"
+					  Visibility="{Binding IsUserLogin, Converter={StaticResource BoolToVisibleConverter}}">
+					<mainViews:TaskListView />
+
+				</Grid>
+			</DockPanel>
+		</md:DrawerHost>
+
+	</md:DialogHost>
 </Window>

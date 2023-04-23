@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 
 namespace Podo_TODOList.View.Login
 {
-	/// <summary>
-	/// Interaction logic for LoginMainPageView.xaml
-	/// </summary>
-	public partial class LoginMainPageView : Page
-	{
-		public LoginMainPageView()
-		{
-			InitializeComponent();
-		}
-	}
+    /// <summary>
+    /// Interaction logic for LoginView.xaml
+    /// </summary>
+    public partial class LoginView : UserControl
+    {
+        public LoginView()
+        {
+            InitializeComponent();
+        }
+    }
 }

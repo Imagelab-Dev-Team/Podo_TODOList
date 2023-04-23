@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using Podo_TODOList.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,9 @@ namespace Podo_TODOList.ViewModel
 		string _title;
 		[ObservableProperty]
 		bool _isChecked;
+		[ObservableProperty]
+		User _currentUser;
+		[ObservableProperty]
+		bool _isUserLogin;
 	}
 }

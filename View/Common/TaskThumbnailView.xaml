@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="Podo_TODOList.View.Common.TaskThumbnailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Podo_TODOList.View.Common"
+		     xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+			 xmlns:colors="clr-namespace:MaterialDesignColors;assembly=MaterialDesignColors"
+             mc:Ignorable="d">
+    <md:Card Width="Auto" 
+			 Padding="0"
+			 Margin="20,10,20,10"
+			 Background="#9162e4"
+			 md:ElevationAssist.Elevation="Dp2">
+		<StackPanel >
+			
+			<DockPanel>
+				<md:Chip Content="nonamed">
+					<md:Chip.Icon>
+						<md:PackIcon Kind="Account"/>
+					</md:Chip.Icon>
+				</md:Chip>
+				<TextBlock Text="Task Title"
+						   Margin="10,0,10,0"
+						   
+						   VerticalAlignment="Center"
+						   HorizontalAlignment="Left"
+						   FontSize="16"/>
+				<md:Chip Content="Priority" Background="#e9573b"
+							Foreground="{DynamicResource MaterialDesignDarkForeground}">
+				</md:Chip>
+
+				<TextBlock Text="20 Apr, 2023" 
+						   Margin="0,0,10,0"
+						   
+						   VerticalAlignment="Center"
+						   HorizontalAlignment="Right"
+						   FontSize="16"
+						   DockPanel.Dock="Right"
+								   />
+			</DockPanel>
+			<Separator Grid.RowSpan="2"/>
+			<StackPanel Orientation="Horizontal">
+				<md:Chip Content="#Tag"/>
+				<TextBlock Text="#Tag" Margin="10,0,0,0" VerticalAlignment="Center" Style="{DynamicResource MaterialDesignTextBlock}" FontSize="12"/>
+				<TextBlock Text="#Tag" Margin="10,0,0,0" VerticalAlignment="Center" Style="{DynamicResource MaterialDesignTextBlock}" FontSize="12"/>
+				<TextBlock Text="#Tag" Margin="10,0,0,0" VerticalAlignment="Center" Style="{DynamicResource MaterialDesignTextBlock}" FontSize="12"/>
+				<TextBlock Text="#Tag" Margin="10,0,0,0" VerticalAlignment="Center" Style="{DynamicResource MaterialDesignTextBlock}" FontSize="12"/>
+			</StackPanel>
+		</StackPanel>
+	</md:Card>
+</UserControl>

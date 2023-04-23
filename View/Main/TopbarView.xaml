@@ -4,9 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 		     xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+			 xmlns:mainVm="clr-namespace:Podo_TODOList.ViewModel.Main"
              xmlns:local="clr-namespace:Podo_TODOList.View.Main"
+			 xmlns:converter="clr-namespace:Podo_TODOList.Core.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="50">
+	<UserControl.Resources>
+		<mainVm:TopbarViewModel x:Key="TopbarViewModel"/>
+		<converter:LoginButtonStyleConverter x:Key="LoginButtonStyleConverter"/>
+	</UserControl.Resources>
     <Grid>
 		<md:ColorZone Mode="PrimaryMid" VerticalAlignment="Stretch">
 			<Grid>
@@ -22,8 +28,13 @@
 							  x:Name="SidebarToggleButton" 
 							  Style="{DynamicResource MaterialDesignHamburgerToggleButton}"
 							  IsChecked="{Binding IsChecked}"/>
-				<Button Grid.Column="4" Style="{DynamicResource MaterialDesignFlatLightBgButton}"
-						Content="LOGIN"/>
+						<!--Style="{DynamicResource MaterialDesignFlatLightBgButton}"-->
+				<Button Grid.Column="4" 
+						Style="{Binding LoginButtonStyle,  Converter={StaticResource LoginButtonStyleConverter}}"
+						Content="{Binding LoginButtonText}"
+						Command="{Binding LoginButtonCommand}"
+						x:Name="TopPanelLoginButton">
+				</Button>
 			</Grid>
 		</md:ColorZone>
 		<!--<Border CornerRadius="5"

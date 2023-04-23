@@ -1,9 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:local="clr-namespace:Podo_TODOList"
-					xmlns:view="clr-namespace:Podo_TODOList.View"
 					xmlns:mainView="clr-namespace:Podo_TODOList.View.Main"
-					xmlns:mainViewModel="clr-namespace:Podo_TODOList.ViewModel.Main">
+					xmlns:loginView="clr-namespace:Podo_TODOList.View.Login"
+					xmlns:commonView="clr-namespace:Podo_TODOList.View.Common"
+					xmlns:mainViewModel="clr-namespace:Podo_TODOList.ViewModel.Main"
+					xmlns:loginViewModel="clr-namespace:Podo_TODOList.ViewModel.Login"
+					xmlns:commonViewModel="clr-namespace:Podo_TODOList.ViewModel.Common"
+					>
 	<DataTemplate DataType="{x:Type mainViewModel:MainViewModel}">
 		<local:MainWindow/>
 	</DataTemplate>
@@ -16,5 +20,13 @@
 	<DataTemplate DataType="{x:Type mainViewModel:UnderbarViewModel}">
 		<mainView:UnderbarView/>
 	</DataTemplate>
-				  
+	<DataTemplate DataType="{x:Type loginViewModel:LoginViewModel}">
+		<loginView:LoginView/>
+	</DataTemplate>
+	<DataTemplate DataType="{x:Type commonViewModel:SmallCircleProgressBarViewModel}">
+		<commonView:SmallCircleProgressBar/>
+	</DataTemplate>
+	<DataTemplate DataType="{x:Type commonViewModel:TaskThumbnailViewModel}">
+		<commonView:TaskThumbnailView/>
+	</DataTemplate>
 </ResourceDictionary>
